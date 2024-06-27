@@ -6,7 +6,7 @@
             <h1>Department</h1>
         </div>
         <div class="col-md-6">
-            <a href="{{route('departmentCreate')}}" class="btn btn-dark mt-2 float-light">
+            <a href="{{route('departmentCreate')}}" class="btn btn-dark mt-2 float-right">
                 新規部門作成
             </a>
         </div>
