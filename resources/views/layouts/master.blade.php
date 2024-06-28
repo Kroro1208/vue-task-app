@@ -20,7 +20,9 @@
 		  		<a href="#" class="img logo rounded-circle mb-5" style="background-image: url(images/logo.jpg);"></a>
 	        <ul class="list-unstyled components mb-5">
 	          <li class="active">
-	            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Management</a>
+	            <a href="#homeSubmenu" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="homeSubmenu">
+                Management
+              </a>
 	            <ul class="collapse list-unstyled" id="homeSubmenu">
                 <li>
                     <a href="{{ route('departmentsIndex')}} ">Department</a>
