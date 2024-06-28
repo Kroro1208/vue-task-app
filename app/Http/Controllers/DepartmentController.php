@@ -9,7 +9,8 @@ class DepartmentController extends Controller
 {
     public function index()
     {
-        return view('management.departments.index');
+        $departments = Department::all();
+        return view('management.departments.index', compact('departments'));
     }
 
     public function create()
@@ -26,5 +27,21 @@ class DepartmentController extends Controller
         ]);
 
         return to_route('departmentsIndex')->with('success', '登録に成功しました');
+    }
+
+    public function edit($id)
+    {
+        $department = Department::find($id);
+        return view('management.departments.edit', compact('department'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        Department::where('id', $id)->update([
+            'director_id' => $request->director_id,
+            "name" => $request->name
+        ]);
+
+        return to_route('departmentsIndex');
     }
 }
