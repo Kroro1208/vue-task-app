@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Department;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class DepartmentController extends Controller
 {
@@ -15,6 +16,7 @@ class DepartmentController extends Controller
 
     public function create()
     {
+        Session::flash('success-message', '新規人事情報を作成しました');
         return view('management.departments.create');
     }
 
