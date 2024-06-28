@@ -77,11 +77,14 @@
             </div>
           </div>
         </nav>
-        @if (session('success'))
-          <div class="alert alert-success">
-              {{ session('success') }}
+        @if (session('message'))
+          @php
+            $alertType = session('alert-type', 'info');
+          @endphp
+          <div class="alert alert-{{ $alertType }}">
+            {{ session('message') }}
           </div>
-         @endif
+        @endif
 
         @yield('content')
       </div>

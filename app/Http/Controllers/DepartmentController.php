@@ -26,7 +26,10 @@ class DepartmentController extends Controller
             'name' => $request->name,
         ]);
 
-        return to_route('departmentsIndex')->with('success', '登録に成功しました');
+        return to_route('departmentsIndex')->with([
+            'message' => '削除に成功しました',
+            'alert-type' => 'success'
+        ]);
     }
 
     public function edit($id)
@@ -48,6 +51,9 @@ class DepartmentController extends Controller
     public function delete($id)
     {
         Department::where('id', $id)->delete();
-        return to_route('departmentsIndex');
+        return to_route('departmentsIndex')->with([
+            'message' => '削除に成功しました',
+            'alert-type' => 'info'
+        ]);
     }
 }
