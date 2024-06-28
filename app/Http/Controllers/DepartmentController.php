@@ -44,4 +44,10 @@ class DepartmentController extends Controller
 
         return to_route('departmentsIndex');
     }
+
+    public function delete($id)
+    {
+        Department::where('id', $id)->delete();
+        return to_route('departmentsIndex');
+    }
 }
