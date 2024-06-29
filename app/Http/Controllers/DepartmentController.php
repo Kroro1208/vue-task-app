@@ -47,13 +47,35 @@ class DepartmentController extends Controller
 
     public function update(Request $request, $id)
     {
-        Department::where('id', $id)->update([
+        Department::where('id', $id)->update([ // update()仕様
             'director_id' => $request->director_id,
             "name" => $request->name
         ]);
 
         return to_route('departmentsIndex');
     }
+
+    // update()を使用しない場合
+    // public function update(Request $request, $id)
+    // {
+    //     $department = Department::find($id);
+    //     $department->director_id = $request->director_id;
+    //     $department->name = $request->name;
+    //     $department->save();
+
+    //     return to_route('departmentsIndex');
+    // }
+
+    // Requestクラスを設定してvalidationを使用する場合
+    // public function update(UpdateDepartmentRequest $request, $id)
+    // {
+    //     $data = $request->validated();
+    //     Department::where('id', $id)->update($data);
+
+    //     return to_route('departmentsIndex');
+    // }
+
+
 
     public function delete($id)
     {
