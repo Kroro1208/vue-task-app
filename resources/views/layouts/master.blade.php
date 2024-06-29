@@ -14,7 +14,7 @@
   </head>
   <body>
 		
-		<div class="wrapper d-flex align-items-stretch">
+		<div class="wrapper d-flex align-items-stretch" id="app">
 			<nav id="sidebar">
 				<div class="p-4 pt-5">
 		  		<a href="#" style="background-image: url(images/logo.jpg);">
