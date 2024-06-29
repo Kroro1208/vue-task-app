@@ -18,7 +18,7 @@
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
     >
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">
@@ -31,7 +31,37 @@
                         aria-label="Close"
                     ></button>
                 </div>
-                <div class="modal-body">...</div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    name="name"
+                                    v-model="name"
+                                />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="director_id">役職</label>
+                                <select
+                                    name="director_id"
+                                    class="form-control"
+                                    v-model="director_id"
+                                >
+                                    <option value="0">
+                                        役職を選んでください
+                                    </option>
+                                    <option value="1">技術部長</option>
+                                    <option value="2">人事部長</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="modal-footer">
                     <button
                         type="button"
@@ -51,6 +81,11 @@
 
 <script>
 export default {
-    name: "Departments",
+    data() {
+        return {
+            name: "",
+            director_id: "",
+        };
+    },
 };
 </script>
