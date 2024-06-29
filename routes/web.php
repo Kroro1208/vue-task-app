@@ -14,6 +14,17 @@ Route::get('departments/edit/{id}', [DepartmentController::class, 'edit'])->name
 Route::post('departments/update/{id}', [DepartmentController::class, 'update'])->name('departmentsUpdate');
 Route::post('departments/delete/{id}', [DepartmentController::class, 'delete'])->name('departmentsDelete');
 
+// まとめて書くパターン
+// Route::resource('departments', DepartmentController::class)->names([
+//     'index' => 'departmentsIndex',
+//     'create' => 'departmentCreate',
+//     'store' => 'departmentsStore',
+//     'edit' => 'departmentsEdit',
+//     'update' => 'departmentsUpdate',
+//     'destroy' => 'departmentsDelete',
+// ]);
+
+
 Route::get('users/index', [UserController::class, 'index'])->name('usersIndex');
 
 Route::get('roles/index', function () {
