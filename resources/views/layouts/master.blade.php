@@ -78,7 +78,7 @@
         </nav>
         @if (session('message'))
           @php
-            $alertType = session('alert-type', 'info');
+            $alertType = session('alert-type', 'info'); // infoはデフォルト値
           @endphp
           <div class="alert alert-{{ $alertType }}">
             {{ session('message') }}

@@ -38,6 +38,24 @@ class DepartmentController extends Controller
             'alert-type' => 'success'
         ]);
     }
+// Requestクラスを設定してvalidationを使用する場合
+//     public function store(StoreDepartmentRequest $request)
+// {
+// バリデーション済みデータを取得
+//     $data = $request->validated();
+
+//     Department::create([
+//         'user_id' => 1,
+//         'director_id' => $data['director_id'],
+//         'name' => $data['name'],
+//     ]);
+
+//     return to_route('departmentsIndex')->with([
+//         'message' => '削除に成功しました',
+//         'alert-type' => 'success'
+//     ]);
+// }
+
 
     public function edit($id)
     {
