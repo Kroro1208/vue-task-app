@@ -1,14 +1,15 @@
 <template>
     <h1>Departments List</h1>
     <!-- Button trigger modal -->
-    <button
+    <!-- <button
         type="button"
         class="btn btn-success"
         data-bs-toggle="modal"
         data-bs-target="#exampleModal"
     >
         新規登録
-    </button>
+    </button> -->
+    <button class="btn btn-success" @click="createDepartment">新規作成</button>
 
     <!-- Modal -->
     <div
@@ -86,6 +87,11 @@ export default {
             name: "",
             director_id: "",
         };
+    },
+    methods: {
+        createDepartment() {
+            $("#exampleModal").modal("show");
+        },
     },
 };
 </script>
